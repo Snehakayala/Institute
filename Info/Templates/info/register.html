@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>REGISTRATION FORM</title>
+</head>
+
+<body style="background-color:AliceBlue;">
+
+<center>
+<h3 style='color:red;'>Registration page</h3>
+
+<form method="POST" action='/info/register/'>
+        {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit">submit</button>
+
+</form>
+</center>
+
+
+</center>
+</body>
+</html>

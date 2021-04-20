@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+
+<center>
+    {% if user.is_authenticated %}
+        {{user.username}}
+    {% endif %}<br>
+    <br>
+
+    <table border="1">
+           <tr>
+           <th>Name</th>
+           <th>Mobile</th>
+           <th>Email</th>
+           <th>Address</th>
+            <th>Gender</th>
+            <th>Country</th>
+
+            <th>marks_percentage</th>
+
+           <th>Options</th>
+           </tr>
+           {% for rec in students %}
+           <tr>
+           <td>{{rec.name}}</td>
+           <td>{{rec.mobile}}</td>
+           <td>{{rec.email}}</td>
+           <td>{{rec.address}}</td>
+           <td>{{rec.gender}}</td>
+           <td>{{rec.country}}</td>
+           <td>{{rec.marks_percentage}}</td>
+           <td>
+               <a href="/info/edit/{{rec.id}}/">edit</a>
+               <a href="/info/delete/{{rec.id}}/">del</a>
+           </td>
+           </tr>
+
+           {% endfor %}
+    </table>
+    <br>
+    <a href="/info/info/"> Information Page </a><br>
+<br>
+
+    {% if user.is_authenticated %}
+            <a href="/info/logout/">logout link</a><br>
+    {% endif %}
+
+
+</center>
+</body>
+</html>

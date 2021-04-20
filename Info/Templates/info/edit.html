@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+<center>
+    {% if user.is_authenticated %}
+        {{user.username}}
+    {% endif %}
+
+    <form method="POST">
+    {% csrf_token %}
+        {{form.as_p}}
+
+        <button type="submit">update</button>
+    </form>
+
+</center>
+</body>
+</html>
